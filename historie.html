@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Histeorie Brna</h1>
+        <h1>Historie Brna</h1>
     </header>
     <nav>
         <ul>
@@ -18,10 +18,19 @@
         </ul>
     </nav>
     <main>
+        <!-- Tlačítko pro zobrazení obrázků (zarovnané na střed) -->
+        <div class="center-button-container">
+            <button id="ukaObrazkyHistorie" class="styled-button">Zobrazit obrázky</button>
+        </div>
+
+        <!-- Sekce obrázků (skrytá na začátku) -->
+        <section id="obrazkySekceHistorie" style="display:none;">
+            <img class="historie-img" src="img/historie.jpg" alt="Historické Brno">
+        </section>
+
         <section>
-            <img src="img/historie.jpg" alt="Historické Brno">
-            <h2>Od středověku po součastnost</h2>
-            <p>Nejstarším dokladem lidského osídlení území Brna je rukou opracovaný kámen nalezený na Červeném kopci starý přibližně 700 000 let.  </p>
+            <h2>Od středověku po současnost</h2>
+            <p>Nejstarším dokladem lidského osídlení území Brna je rukou opracovaný kámen nalezený na Červeném kopci starý přibližně 700 000 let. </p>
             <p>V oblasti Brna žil také člověk kromaňonský.</p>
             <p>Významným nalezištěm se stopami osídlení starší doby kamenné je Stránská skála, kde je ovšem i osídlení z období pozdějších (eneolit). </p>
             <p>Počínaje mladší dobou kamennou (neolit) byl prostor Brna osídlen nepřetržitě, přičemž v některých obdobích pravěku a celý středověk zde existovaly sídelní útvary centrálního významu. </p>
@@ -31,5 +40,23 @@
     <footer>
         <p>&copy; 2025 Moje město Brno</p>
     </footer>
+
+    <script>
+        // Získáme tlačítko a sekci obrázků
+        const buttonHistorie = document.getElementById('ukaObrazkyHistorie');
+        const obrazkySekceHistorie = document.getElementById('obrazkySekceHistorie');
+
+        // Přidáme událost pro kliknutí na tlačítko
+        buttonHistorie.addEventListener('click', () => {
+            // Toggle zobrazení sekce obrázků
+            if (obrazkySekceHistorie.style.display === 'none') {
+                obrazkySekceHistorie.style.display = 'block';
+                buttonHistorie.textContent = 'Skrýt obrázky'; // Změníme text tlačítka
+            } else {
+                obrazkySekceHistorie.style.display = 'none';
+                buttonHistorie.textContent = 'Zobrazit obrázky'; // Obnovíme původní text tlačítka
+            }
+        });
+    </script>
 </body>
 </html>

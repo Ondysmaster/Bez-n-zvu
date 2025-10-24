@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Památky města</title>
+    <title>Památnky města Brna</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Památky Brna</h1>
+        <h1>Památnky Brna</h1>
     </header>
     <nav>
         <ul>
@@ -18,16 +18,45 @@
         </ul>
     </nav>
     <main>
-        <section>
-            <button id="ukazObrazky">Zobrazit obrázky</button>
+        <!-- Tlačítko pro zobrazení obrázků -->
+        <div class="center-button-container">
+            <input type="checkbox" id="toggleImagesPamatky" class="toggle-checkbox">
+            <label for="toggleImagesPamatky" class="styled-button">Zobrazit obrázky</label>
+        </div>
+
+        <!-- Sekce obrázků (skrytá na začátku) -->
+        <section id="obrazkySekcePamatky" class="obrazky-container">
+            <img class="pamatka-img" src="img/orloj.jpg" alt="Orloj">
+            <img class="pamatka-img" src="img/noc.jpg" alt="Noc">
         </section>
+
         <section>
-            <img class="obrazek1" width="400px" src="img/orloj.jpg" alt="Orloj">
-            <img src="img/noc.jpg" alt="Noc">
+            <h2>Památnky města Brna</h2>
+            <p>Brno je město s mnoha historickými památkami, včetně známého orloje a dalších významných míst.</p>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Moje město Brno</p>
     </footer>
+
+    <!-- Skript pro zobrazení obrázků -->
+    <script>
+        // Získání tlačítka a sekce obrázků
+        const button = document.getElementById('toggleImagesPamatky');
+        const imageSection = document.getElementById('obrazkySekcePamatky');
+
+        // Přidání události pro kliknutí na tlačítko
+        button.addEventListener('click', () => {
+            // Pokud je sekce obrázků skrytá, zobrazíme ji
+            if (imageSection.style.display === 'none' || imageSection.style.display === '') {
+                imageSection.style.display = 'block';
+                button.textContent = 'Skrýt obrázky'; // Změníme text tlačítka na "Skrýt obrázky"
+            } else {
+                imageSection.style.display = 'none'; // Skryjeme obrázky
+                button.textContent = 'Zobrazit obrázky'; // Obnovíme text tlačítka
+            }
+        });
+    </script>
 </body>
 </html>

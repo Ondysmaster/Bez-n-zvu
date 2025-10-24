@@ -1,64 +1,178 @@
-body{
-    font-family: Arial, sans-serif;
-    background-color: bisque;
-    color: burlywood;
+/* 🌸 Základní styl pro celé tělo stránky */
+body, html {
+    height: 100%; /* Zajistí, že tělo stránky a HTML budou mít výšku 100% */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
-header{
-    background-color: bisque;
-    color: burlywood;
+
+/* 🌼 Hlavička */
+header {
+    background-color: #e3c6a2;
+    color: #6a3f1d;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-nav ul{
+
+/* 🍫 Navigace */
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    background-color: chocolate;
+    background-color: #7b4f2f;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
-nav ul li{
-    margin: 0 15px;
+
+nav ul li {
+    margin: 0 20px;
 }
-nav ul li a{
+
+nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 10;
+    font-size: 16px;
+    padding: 12px 18px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+    background-color: #ff7043; /* světlejší korálová */
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌿 Hlavní obsah */
+main {
+    flex-grow: 1;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* 💎 Sekce */
+section {
+    background-color: #f0f8ff;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 🖼️ Galerie obrázků pro Památky a Historii */
+.pamatka-img, .historie-img {
+    width: 100%; /* Obrázky vyplní celý kontejner */
+    height: auto; /* Automaticky se přizpůsobí poměru stran */
+    max-width: 600px; /* Maximální šířka obrázku */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: contain; /* Zachování poměru stran obrázku */
+}
+
+/* Efekty při hoveru */
+.pamatka-img:hover, .historie-img:hover {
+    transform: scale(1.1); /* Zvětšení při najetí */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Silnější stín při hoveru */
+}
+
+.pamatka-img:active, .historie-img:active {
+    transform: scale(1.05); /* Mírné zmenšení při kliknutí */
+}
+
+/* 📱 Responsivita pro mobily */
+@media (max-width: 768px) {
+    .pamatka-img, .historie-img {
+        width: 90%; /* Na mobilech obrázky zabírají větší část obrazovky */
+        max-width: none; /* Odstraní maximální šířku */
+    }
+}
+
+/* 🌟 Styl pro footer */
+footer {
+    background-color: #7b4f2f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* 🌟 Styl pro tlačítka */
+#ukaObrazky, #ukaObrazkyHistorie, .styled-button {
+    background-color: #7b4f2f; /* tmavší hnědá */
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
     display: inline-block;
 }
-nav ul li a:hover, nav ul li a:active{
-    background-color: coral;
-    border-radius: 5px;
+
+#ukaObrazky:hover, #ukaObrazkyHistorie:hover, .styled-button:hover {
+    background-color: #ff7043; /* Korálová barva při hoveru */
+    transform: scale(1.05); /* Zvětšení při najetí */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-main{
-    max-width: 900px;
-    margin: 0;
-    padding: 0;
+
+#ukaObrazky:active, #ukaObrazkyHistorie:active, .styled-button:active {
+    transform: scale(1); /* Resetování efektu při kliknutí */
 }
-section{
-    background-color: aliceblue;
+
+/* 🌟 Nový kontejner pro tlačítko (zarovnání na střed) */
+.center-button-container {
+    display: flex;
+    justify-content: center; /* Tlačítko bude uprostřed horizontálně */
+    align-items: center; /* Zarovnání na střed vertikálně */
     margin-bottom: 20px;
-    padding: 20px;
-    transition: transform 0.3s;
-    cursor: pointer;
 }
-#galeriePamatky img{
-    width: 30%;
-    margin: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-#galeriePamatky img:hover{
-    transform: scale(1.5);
-}
-#galeriePamatky img:active{
-    
-}
-#obrazek1{
-    transform: scale(1.5);
-    transition: transform 0.3s;
-    z-index: 2;
+
+/* 🌟 Kontejner pro obrázky */
+.obrazky-container {
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
     position: relative;
+    justify-content: center; /* Zarovnání na střed */
+    display: none; /* Skryté na začátku */
+    flex-wrap: wrap; /* Obrázky se přizpůsobí */
+    justify-content: space-evenly; /* Vytvoří mezery mezi obrázky */
+}
+
+/* 🌟 Zaškrtávací políčko pro zobrazení obrázků */
+.toggle-checkbox {
+    display: none; /* Skrytí checkboxu */
+}
+
+.toggle-checkbox:checked + .styled-button {
+    background-color: #ff7043; /* Korálová barva pro tlačítko po zaškrtnutí */
+    transform: scale(1.05); /* Zvětšení při zaškrtnutí */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-checkbox:checked ~ #obrazkySekcePamatky {
+    display: block; /* Zobrazí obrázky, když je checkbox zaškrtnutý */
 }
